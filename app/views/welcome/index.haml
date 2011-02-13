@@ -1,0 +1,16 @@
+%h1 Welcome!
+
+- if request.format.html?
+  #sidebar
+    This is a sidebar. It will only be visible in the HTML version.
+
+%p 
+  The requested format is: #{request.format.to_s}!
+
+- if request.format.html?
+  %p
+    = link_to  url_for(request.params.merge(:format => :pdf)) do
+      = image_tag('/images/pdf_icon.png', :alt => 'Download')
+      Download as PDF
+
+

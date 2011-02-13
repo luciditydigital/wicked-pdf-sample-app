@@ -1,0 +1,9 @@
+%html
+  %head
+    %style{:type=>"text/css"}
+      - # inline the required css files
+      - ['welcome', 'pdf'].each do |stylesheet|
+        = File.read "#{Rails.public_path}/stylesheets/#{stylesheet}.css"
+
+  %body
+    = yield
